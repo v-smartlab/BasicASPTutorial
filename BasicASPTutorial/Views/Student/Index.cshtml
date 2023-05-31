@@ -1,0 +1,149 @@
+﻿@model IEnumerable<Student>;
+@{
+    ViewData["Title"] = "หน้าแรก";
+}
+
+<form id="formstudent" method="POST" asp-controller="Student" asp-action="Index">
+    <input type="hidden"id="pageIndex" name="pageIndex" />   
+    <input type="hidden" id="repType" name="repType" />
+    <div class="row" class="text-center">    
+        <div class="col-md-5 text-end">
+            <div class="form-group">
+                <label type="text" class="stylelabel">รหัสนักเรียน</label>
+            </div>
+        </div>
+        <div class="col-md-2 text-end">
+            <div class="form-group">
+                @Html.Editor("idtxt", new { htmlAttributes = new { @class = "form-control autoNumberIntNoSeparate", maxlength="20", placeholder="ระบุเป็นตัวเลขเท่านั้น",  autocomplete="off"} })
+                <!--input type="text" id="idtxt1" name="idtxt" value="" placeholder='ระบุเป็นตัวเลขเท่านั้น' autocomplete='off' class="form-control autoNumberIntNoSeparate" /-->
+            </div>
+        </div>
+        <div class="col-md-5">       
+            <div class="dropdown">
+                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                    <i class="bi bi-newspaper"></i> Report File
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item btnGenerate" id="btnGenerate1" href="#" onclick="$('#repType').val(1)">PDF</a></li>
+                    <li><a class="dropdown-item btnGenerate" id="btnGenerate2" href="#" onclick="$('#repType').val(2)">Excel</a></li>
+                    <li><a class="dropdown-item btnGenerate" id="btnGenerate3" href="#" onclick="$('#repType').val(3)">Word</a></li>
+                </ul>
+            </div>
+        </div>   
+    </div>
+    <div class="row" class="text-center">
+        <div class="col-md-5 text-end">
+            <div class="form-group">
+                <label type="text"  class="stylelabel">ชื่อนักเรียน</label>
+            </div>
+        </div>
+        <div class="col-md-2 text-end">
+            <div class="form-group">
+                @Html.Editor("nametxt", new { htmlAttributes = new { @class = "form-control", maxlength="40", autocomplete="off"} })
+                <!--input type="text" id="idtxt2" name="nametxt" value="" autocomplete='off' class="form-control" /-->
+            </div>
+        </div>
+        <div class="col-md-5">            
+        </div>
+    </div>
+    <div class="row" class="text-center">
+        <div class="col-md-5 text-end">
+            <div class="form-group">
+                <label type="text" class="stylelabel">วันที่ปรับปรุง</label>
+            </div>
+        </div>
+        <div class="col-md-2 text-end">
+            <div class="form-group">
+                <input type="text" id="datepicker1" name="datetxt" value="" autocomplete='off' class="form-control datepicker" />
+            </div>
+        </div>
+        <div class="col-md-5">
+            <button type="submit" class="btn btn-info btn-sm">ค้นหา</button>  
+            
+        </div>
+    </div>
+</form>
+
+@if (Model != null)
+{
+    <h1 class="text-center">คะแนนสอบวิชาคอมพิวเตอร์</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+            <th>รหัสนักเรียน</th>
+                <th>ชื่อนักเรียน</th>
+                <th>คะแนนสอบ</th>
+                <th>วันที่ปรับปรุง</th>
+                <th>แก้ไข</th>
+                <th>ลบ</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                    <tr>
+                        <td>@student.Id</td>
+                        <td>@student.Name</td>
+                        <td>@student.Score</td>
+                    @*<td>@student.DateUpdate.Value.ToString("dd/mm/yyyy")</td>*@
+                        
+                        <td>
+                        @if (student.DateUpdate.HasValue)
+                        {
+                            @student.DateUpdate.Value.ToString("dd/MM/yyyy")
+                        }
+                        </td> 
+                        <td>
+                            <a class="btn btn-warning" 
+                    asp-controller="Student"
+                    asp-action="Edit"
+                    asp-route-id="@student.Id">แก้ไข</a>
+                        </td>
+                        <td><a class="btn btn-danger"
+                    asp-controller="Student"
+                    asp-action="Delete"
+                    asp-route-id="@student.Id"
+                    onclick="return confirm('คุณต้องการลบ @student.Name หรือไม่ ?')"
+                    >ลบ</a>
+                        </td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+    <ul class="pagination pagination-sm justify-content-end" style="margin: -10px 20px">
+        @if (@ViewBag.PageNo > 1)
+        {
+            <li class="page-item">
+                <a class="page-link" title="Previous" href="#"
+                   onclick="pg_SetPageNo1(@ViewBag.PageNo - 1)">&laquo;&laquo;</a>
+            </li>
+        }
+        <li class="page-item active">
+            <a class="page-link" href="#">@ViewBag.PageNo</a>
+        </li>
+        @if (@ViewBag.PageNo + 1 <= @ViewBag.TotalPages)
+        {
+            <li class="page-item">
+                <a class="page-link" title="Next" href="#"
+                   onclick="pg_SetPageNo1(@ViewBag.PageNo + 1)">&raquo;&raquo;</a>
+            </li>
+        }
+        <li class="page-item">
+            <span style="font-size:14px">&emsp;Total&ensp;@ViewBag.CountRows&nbsp;rows&ensp;:&ensp;@ViewBag.TotalPages&nbsp;page</span>
+        </li>
+    </ul>
+}
+else
+{
+    <div class="alert alert-secondary my-2">ไม่มีข้อมูลนักเรียนในระบบ</div>
+}
+
+@section Scripts
+    {
+    <script>
+        function pg_SetPageNo1(pn) {
+            $("#pageIndex").val(pn);
+            $("form#formstudent").submit();  // Edit {Form id} not equal to another forms.
+        }
+    </script>
+}

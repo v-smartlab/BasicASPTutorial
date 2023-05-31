@@ -1,0 +1,78 @@
+﻿@model Student;
+@{
+    ViewData["Title"] = "แก้ไขข้อมูล";
+}
+
+<h1 class="text-center">แก้ไขข้อมูล</h1>
+
+<form method="POST" asp-controller="Student" asp-action="Edit">
+    <div class="row">
+        <div class="col-md-2 text-end">
+            <div class="form-group">
+                <label asp-for="Name" class="stylelabel"></label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">                
+                <input type="text" asp-for="Name" autocomplete='off' class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-2 text-end">
+            <div class="form-group">
+                <label asp-for="DateUpdate" class="stylelabel"></label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="text" id="datepicker1" asp-for="DateUpdate" autocomplete='off' class="form-control datepicker" />
+                <span asp-validation-for="DateUpdate" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 text-end">
+            <div class="form-group">
+                <label asp-for="Score" class="stylelabel"></label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="number" asp-for="Score" autocomplete='off' class="form-control" />
+                <span asp-validation-for="Score" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-2 text-end">
+            <div class="form-group">
+                <label type="text" class="stylelabel">จำนวนเงิน</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="text" id="autonumbertxt" value="998888" class="form-control text-end autoNumber2Dec" />
+            </div>
+        </div>
+    </div>
+   
+    <div class="row" class ="text-center">
+        <div class="col-md-5">
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary my-2">อัพเดต</button>
+            <!--button type="submit" class="btn btn-success my-2" asp-action="Index">หน้าแรก</!--button-->
+            <a class="btn btn-success my-2" asp-controller="Student" asp-action="Index">หน้าแรก</a>
+        </div>
+        <div class="col-md-5">
+        </div>
+    </div>
+    <!--div class="form-group">
+        <label asp-for="DateUpdate"></label>
+        <input type="text" id="datepicker" asp-for="DateUpdate" class="form-control" />
+        <span asp-validation-for="DateUpdate" class="text-danger"></span>
+    </!--div-->
+</form>
+    
+
+
+
+
