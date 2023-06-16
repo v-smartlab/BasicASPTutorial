@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kajohn\\source\\repos\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj": {}
+    "D:\\Works\\Repository\\GitHub\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kajohn\\source\\repos\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj": {
+    "D:\\Works\\Repository\\GitHub\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kajohn\\source\\repos\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj",
+        "projectUniqueName": "D:\\Works\\Repository\\GitHub\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj",
         "projectName": "BasicASPTutorial",
-        "projectPath": "C:\\Users\\Kajohn\\source\\repos\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj",
+        "projectPath": "D:\\Works\\Repository\\GitHub\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj",
         "packagesPath": "C:\\Users\\Kajohn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kajohn\\source\\repos\\BasicASPTutorial\\BasicASPTutorial\\obj\\",
+        "outputPath": "D:\\Works\\Repository\\GitHub\\BasicASPTutorial\\BasicASPTutorial\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
