@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "obj/Release/net7.0/PubTmp/Out/wwwroot/lib/jquery-ui-1.13.2.custom",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "npm: install - obj/Release/net7.0/PubTmp/Out/wwwroot/lib/jquery-ui-1.13.2.custom",
+			"detail": "install dependencies from package"
+		}
+	]
+}
