@@ -1,31 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Works\\Repository\\GitHub\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj": {}
+    "E:\\GIT_BSONG\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj": {}
   },
   "projects": {
-    "D:\\Works\\Repository\\GitHub\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj": {
+    "E:\\GIT_BSONG\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Works\\Repository\\GitHub\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj",
+        "projectUniqueName": "E:\\GIT_BSONG\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj",
         "projectName": "BasicASPTutorial",
-        "projectPath": "D:\\Works\\Repository\\GitHub\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj",
-        "packagesPath": "C:\\Users\\Kajohn\\.nuget\\packages\\",
-        "outputPath": "D:\\Works\\Repository\\GitHub\\BasicASPTutorial\\BasicASPTutorial\\obj\\",
+        "projectPath": "E:\\GIT_BSONG\\BasicASPTutorial\\BasicASPTutorial\\BasicASPTutorial.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "E:\\GIT_BSONG\\BasicASPTutorial\\BasicASPTutorial\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kajohn\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -90,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }
