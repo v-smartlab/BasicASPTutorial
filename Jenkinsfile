@@ -1,6 +1,6 @@
 node {
   stage('SCM') {
-    checkout scm
+    git branch: 'main', url: 'https://github.com/v-smartlab/BasicASPTutorial.git'
   }
   stage('SonarQube Analysis') {
     def scannerHome = tool 'SonarScanner for MSBuild'
