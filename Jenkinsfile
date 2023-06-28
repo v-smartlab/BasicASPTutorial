@@ -3,7 +3,7 @@ node {
     git branch: 'main', url: 'https://github.com/v-smartlab/BasicASPTutorial.git'
   }
   stage('SonarQube Analysis') {
-    def scannerHome = tool 'SonarScanner for MSBuild'
+    def scannerHome = 'D:/SonarQube/sonar-scanner-msbuild-5.13.0.66756-net5.0'
     withSonarQubeEnv(SonarQube.Net) {
       /*
       bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll begin /k:\"BasicASPTutorial\""
