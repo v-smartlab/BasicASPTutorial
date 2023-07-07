@@ -4,7 +4,7 @@ version: '3.4'
 
 services:
   basicasptutorial:
-    image: basicasptutorial    
+    image: vsmartlab/basicasptutorial:0.0.1    
     build:
       context: .
       dockerfile: BasicASPTutorial/Dockerfile    
